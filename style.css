@@ -13,14 +13,11 @@ html {
 
 body {
   background-color: #111;
-  margin: 0;
-  position: absolute;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  top: 45%;
-  -moz-transform: translateX(-0%) translateY(-50%);
-  -webkit-transform: translateX(-0%) translateY(-50%);
-  transform: translateX(0%) translateY(-50%);
-  width: 100vw;
 }
 
 #digital-web-clock {
@@ -29,6 +26,28 @@ body {
   font-size: 4rem;
   line-height: 1;
   word-break: break-word;
+}
+
+.vertical-line {
+  position: absolute;
+  width: .1rem;
+  height: 100vh;
+  background-color: #fff;
+  animation: moveLine 25s linear infinite;
+}
+
+@keyframes moveLine {
+  0% {
+      top: 0;
+      left: 0;
+  }
+  99.99% {
+      left: calc(100vw - 1rem);
+  }
+  100% {
+      top: 0;
+      left: 0;
+  }
 }
 
 @media screen and (min-width: 546px) {
